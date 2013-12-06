@@ -24,12 +24,14 @@ namespace TinkerForgeProjects.CiSignalizer
 
 		#region Fields
 		// The host and the port to the master brick
-		private static string _Host = "192.168.138.1";
+		private static string _Host = "localhost";
 		private static int _Port = 4223;
 		// The UID of the Dual Relay Bricklet
 		private static string _BrickletDualRelayUid = "a7E";
+		private static string _BrickletIO4Uid = "aej";
 		// The jenkins xml api request filter
-		private static string _XmlApiRequest = "http://ci1:8181/api/xml?tree=jobs[lastBuild[building,result]]";
+		//private static string _XmlApiRequest = "http://ci1:8181/api/xml?tree=jobs[lastBuild[building,result]]";
+		private static string _XmlApiRequest = "http://ci1:8181/view/Test/api/xml?tree=jobs[lastBuild[building,result]]";
 		#endregion
 
 		#region Main
@@ -38,6 +40,8 @@ namespace TinkerForgeProjects.CiSignalizer
 			IPConnection ipConnection = new IPConnection();
 
 			BrickletDualRelay brickletDualRelay = new BrickletDualRelay(_BrickletDualRelayUid, ipConnection);
+
+			BrickletIO4 brickletIO4 = new BrickletIO4(_BrickletIO4Uid, ipConnection);
 
 			ipConnection.Connect(_Host, _Port);
 
@@ -94,9 +98,14 @@ namespace TinkerForgeProjects.CiSignalizer
 				{
 					bool relay1 = false;
 					bool relay2 = false;
+					// Set dual realy bricklet
 					MyGetRelayStatesFromTrafficLightState(trafficLightState, out relay1, out relay2);
 					brickletDualRelay.SetState(relay1, relay2);
+					// Set IO4 bricklet
+					MySetBrickletIO4State(trafficLightState, brickletIO4);
 				}
+
+				
 
 				Thread.Sleep(1000);
 			}
@@ -104,9 +113,43 @@ namespace TinkerForgeProjects.CiSignalizer
 
 			ipConnection.Disconnect();
 		}
+
 		#endregion
 
 		#region My Methods
+		private static void MySetBrickletIO4State(TrafficLightStates trafficLightState, BrickletIO4 brickletIO4)
+		{
+			switch (trafficLightState)
+			{
+				case TrafficLightStates.Off:
+					brickletIO4.SetConfiguration(1 << 0, 'o', false);
+					brickletIO4.SetConfiguration(1 << 1, 'o', false);
+					brickletIO4.SetConfiguration(1 << 2, 'o', false);
+					brickletIO4.SetConfiguration(1 << 3, 'o', false);
+					break;
+				case TrafficLightStates.Red:
+					brickletIO4.SetConfiguration(1 << 0, 'o', true);
+					brickletIO4.SetConfiguration(1 << 1, 'o', true);
+					brickletIO4.SetConfiguration(1 << 2, 'o', false);
+					brickletIO4.SetConfiguration(1 << 3, 'o', false);
+					break;
+				case TrafficLightStates.Yellow:
+					brickletIO4.SetConfiguration(1 << 0, 'o', false);
+					brickletIO4.SetConfiguration(1 << 1, 'o', false);
+					brickletIO4.SetConfiguration(1 << 2, 'o', true);
+					brickletIO4.SetConfiguration(1 << 3, 'o', false);
+					break;
+				case TrafficLightStates.Green:
+					brickletIO4.SetConfiguration(1 << 0, 'o', false);
+					brickletIO4.SetConfiguration(1 << 1, 'o', false);
+					brickletIO4.SetConfiguration(1 << 2, 'o', false);
+					brickletIO4.SetConfiguration(1 << 3, 'o', true);
+					break;
+				default:
+					break;
+			}
+		}
+
 		private static void MyGetRelayStatesFromTrafficLightState(TrafficLightStates trafficLightState, out bool relay1, out bool relay2)
 		{
 			// Yellow

@@ -1,0 +1,12 @@
+/CiSignalizer/bin
+/CiSignalizer/obj
+/AirGuitar/bin
+/AirGuitar/obj
+/JenkinsWebClient/bin
+/JenkinsWebClient/obj
+/Metronome/bin
+/Metronome/obj
+/TrafficLight/bin
+/TrafficLight/obj
+/*.suo
+/CiSignalizer/*.user
