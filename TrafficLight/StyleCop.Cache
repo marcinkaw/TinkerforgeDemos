@@ -1,0 +1,114 @@
+<stylecopresultscache>
+  <version>11</version>
+  <sourcecode name="App.xaml.cs" parser="StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>06/27/2012 10:42:02</timestamp>
+      <milliseconds>299</milliseconds>
+    </settings>
+    <timestamp>03/19/2013 10:10:46</timestamp>
+    <milliseconds>721</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="AssemblyInfo.cs" parser="StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>06/27/2012 10:42:02</timestamp>
+      <milliseconds>299</milliseconds>
+    </settings>
+    <timestamp>03/19/2013 09:54:06</timestamp>
+    <milliseconds>432</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="TrafficLightStateToIsOnConverter.cs" parser="StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>06/27/2012 10:42:02</timestamp>
+      <milliseconds>299</milliseconds>
+    </settings>
+    <timestamp>03/19/2013 11:56:10</timestamp>
+    <milliseconds>708</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="TrafficLightStateToIsCheckedConverter.cs" parser="StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>06/27/2012 10:42:02</timestamp>
+      <milliseconds>299</milliseconds>
+    </settings>
+    <timestamp>03/19/2013 11:34:09</timestamp>
+    <milliseconds>783</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="WeakEventHandlerManager.cs" parser="StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>06/27/2012 10:42:02</timestamp>
+      <milliseconds>299</milliseconds>
+    </settings>
+    <timestamp>03/19/2013 13:16:26</timestamp>
+    <milliseconds>64</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="MainWindow.xaml.cs" parser="StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>06/27/2012 10:42:02</timestamp>
+      <milliseconds>299</milliseconds>
+    </settings>
+    <timestamp>03/19/2013 15:14:43</timestamp>
+    <milliseconds>443</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="DelegateCommand.cs" parser="StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>06/27/2012 10:42:02</timestamp>
+      <milliseconds>299</milliseconds>
+    </settings>
+    <timestamp>03/19/2013 15:07:19</timestamp>
+    <milliseconds>431</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Resources.Designer.cs" parser="StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>06/27/2012 10:42:02</timestamp>
+      <milliseconds>299</milliseconds>
+    </settings>
+    <timestamp>03/19/2013 14:52:28</timestamp>
+    <milliseconds>756</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Settings.Designer.cs" parser="StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>06/27/2012 10:42:02</timestamp>
+      <milliseconds>299</milliseconds>
+    </settings>
+    <timestamp>03/19/2013 14:52:28</timestamp>
+    <milliseconds>991</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="TrafficLightStateToSolidColorBrushConverter.cs" parser="StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>06/27/2012 10:42:02</timestamp>
+      <milliseconds>299</milliseconds>
+    </settings>
+    <timestamp>03/19/2013 15:15:27</timestamp>
+    <milliseconds>537</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="_Enums.cs" parser="StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>06/27/2012 10:42:02</timestamp>
+      <milliseconds>299</milliseconds>
+    </settings>
+    <timestamp>03/19/2013 19:04:46</timestamp>
+    <milliseconds>838</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="TrafficLightViewModel.cs" parser="StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>06/27/2012 10:42:02</timestamp>
+      <milliseconds>299</milliseconds>
+    </settings>
+    <timestamp>03/20/2013 00:04:30</timestamp>
+    <milliseconds>741</milliseconds>
+    <violations />
+  </sourcecode>
+  <project key="-853202667">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+</stylecopresultscache>

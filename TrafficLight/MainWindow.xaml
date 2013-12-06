@@ -1,0 +1,63 @@
+﻿<Window 
+	x:Class="TinkerForgeProjects.TrafficLight.MainWindow"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:my="clr-namespace:TinkerForgeProjects.TrafficLight"
+	Title="TrafficLight"
+	Height="180"
+	Width="250"
+	WindowStartupLocation="CenterScreen">
+
+	<Window.Resources>
+		<my:TrafficLightStateToIsOnConverter x:Key="TrafficLightStateToIsOnConverter"/>
+		<my:TrafficLightStateToSolidColorBrushConverter x:Key="TrafficLightStateToSolidColorBrushConverter"/>
+		<my:TrafficLightStateToIsCheckedConverter x:Key="TrafficLightStateToIsCheckedConverter"/>
+	</Window.Resources>
+	
+	<StackPanel>
+		<StackPanel
+			Margin="20"
+			Orientation="Horizontal" 
+			HorizontalAlignment="Center" 
+			VerticalAlignment="Center">
+			<Rectangle 
+				Fill="{Binding TrafficLightState, Converter={StaticResource TrafficLightStateToSolidColorBrushConverter}, Mode=OneWay}"
+				Width="60"
+				Height="60" 
+				Stroke="Black" />
+			<StackPanel
+				Margin="20,0,0,0"
+				VerticalAlignment="Center">
+				<RadioButton 
+					GroupName="Red"
+					Content="Red"
+					IsEnabled="{Binding TrafficLightState, Converter={StaticResource TrafficLightStateToIsOnConverter}, Mode=OneWay}"
+					IsChecked="{Binding TrafficLightState, Converter={StaticResource TrafficLightStateToIsCheckedConverter}, ConverterParameter='Red', Mode=TwoWay}"/>
+				<RadioButton 
+					GroupName="Yellow"
+					Content="Yellow"
+					IsEnabled="{Binding TrafficLightState, Converter={StaticResource TrafficLightStateToIsOnConverter}, Mode=OneWay}"
+					IsChecked="{Binding TrafficLightState, Converter={StaticResource TrafficLightStateToIsCheckedConverter}, ConverterParameter='Yellow', Mode=TwoWay}"/>
+				<RadioButton
+					GroupName="Green"
+					Content="Green"
+					IsEnabled="{Binding TrafficLightState, Converter={StaticResource TrafficLightStateToIsOnConverter}, Mode=OneWay}"
+					IsChecked="{Binding TrafficLightState, Converter={StaticResource TrafficLightStateToIsCheckedConverter}, ConverterParameter='Green', Mode=TwoWay}"/>
+			</StackPanel>
+		</StackPanel>
+		<StackPanel
+			Margin="0,5,0,0"
+			Orientation="Horizontal"
+			HorizontalAlignment="Center">
+			<Button
+				Content="Connect"
+				Width="100"
+				Command="{Binding ConnectCommand}"/>
+			<Button
+				Margin="5,0,0,0"
+				Content="Disconnect"
+				Width="100"
+				Command="{Binding DisconnectCommand}"/>
+		</StackPanel>
+	</StackPanel>
+</Window>
